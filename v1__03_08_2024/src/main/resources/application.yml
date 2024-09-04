@@ -1,0 +1,20 @@
+app:
+  db:
+    url: jdbc:postgresql://127.0.0.1:5433/paygate-db
+    username: postgres
+    password: postgres
+    schema: paygate_interview_v1_service
+server:
+  port: 9069
+
+spring:
+  main:
+    banner-mode: off
+  jpa:
+    properties:
+      hibernate:
+        default_schema: ${app.db.schema}
+  datasource:
+    url: ${app.db.url}
+    username: ${app.db.username}
+    password: ${app.db.password}
